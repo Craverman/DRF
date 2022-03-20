@@ -8,4 +8,4 @@ class User(AbstractUser):
     firstname = models.CharField(max_length=64)
     lastname = models.CharField(max_length=64)
     birthday_year = models.PositiveIntegerField
-    email = models.EmailField(unique=True
+    email = models.EmailField(unique=True)
