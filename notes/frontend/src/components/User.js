@@ -24,10 +24,10 @@ const UserList = ({users}) => {
    return (
        <table>
            <th>
-               First name
+               Firstname
            </th>
            <th>
-               Last Name
+               LastName
            </th>
            <th>
                Email
