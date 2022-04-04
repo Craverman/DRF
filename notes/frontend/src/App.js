@@ -5,6 +5,9 @@ import './App.css';
 import UserList from './components/User.js'
 import Footer from './components/Footer.js'
 import Menu from './components/Menu.js'
+import ProjectList from './components/Project.js'
+import TodoList from './components/Todo.js'
+
 
 
 
@@ -12,7 +15,9 @@ class App extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
-            'users':[]
+            'users':[],
+            'projects':[],
+            'todos':[]
         }
     }
 
@@ -26,7 +31,21 @@ class App extends React.Component {
                    }
                )
            }).catch(error => console.log(error))
+
+
+       axios.get('http://127.0.0.1:8000/api/todo')
+           .then(response => {
+               const todos = response.data
+                   this.setState(
+                   {
+                       'todos': todos
+                   }
+               )
+           }).catch(error => console.log(error))
+
     }
+
+
    render () {
        return (
        <body>
@@ -34,6 +53,8 @@ class App extends React.Component {
 
                <Menu />
                <UserList users={this.state.users} />
+               <ProjectList projects={this.state.projects} />
+               <TodoList todos={this.state.todos} />
                <Footer />
            </div>
            </body>
