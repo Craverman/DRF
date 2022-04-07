@@ -36,7 +36,7 @@ class App extends React.Component {
 
        axios.get('http://127.0.0.1:8000/api/todo')
            .then(response => {
-               const todos = response.data
+               const todos = response.data.results
                    this.setState(
                    {
                        'todos': todos
@@ -46,7 +46,7 @@ class App extends React.Component {
 
        axios.get('http://127.0.0.1:8000/api/project')
            .then(response => {
-               const projects = response.data
+               const projects = response.data.results
                    this.setState(
                    {
                        'projects': projects
