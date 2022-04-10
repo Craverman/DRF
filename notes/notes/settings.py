@@ -45,6 +45,7 @@ INSTALLED_APPS = [
     'usersapp',
     'todo',
     'django_filters',
+    'rest_framework.authtoken'
 
 ]
 
@@ -134,21 +135,19 @@ AUTH_USER_MODEL = 'usersapp.User'
 
 REST_FRAMEWORK = {
 
-    # 'DEFAULT_RENDERER_CLASSES': (
-    #     'djangorestframework_camel_case.render.CamelCaseJSONRenderer',
-    #     'djangorestframework_camel_case.render.CamelCaseBrowsableAPIRenderer',
-    #     # Any other renders
-    # ),
-    #
-    # 'DEFAULT_PARSER_CLASSES': (
-    #     # If you use MultiPartFormParser or FormParser, we also have a camel case version
-    #     'djangorestframework_camel_case.parser.CamelCaseFormParser',
-    #     'djangorestframework_camel_case.parser.CamelCaseMultiPartParser',
-    #     'djangorestframework_camel_case.parser.CamelCaseJSONParser',
-    #     # Any other parsers
-    # ),
+    'DEFAULT_PERMISSION_CLASSES': [
+        'rest_framework.permissions.DjangoModelPermissions'],
+
+    'DEFAULT_AUTHENTICATION_CLASSES': [
+        'rest_framework.authentication.BasicAuthentication',
+        'rest_framework.authentication.SessionAuthentication',
+        'rest_framework.authentication.TokenAuthentication',
+        'rest_framework_simplejwt.authentication.JWTAuthentication'],
 
     'DEFAULT_FILTER_BACKENDS': ['django_filters.rest_framework.DjangoFilterBackend'],
-    'DEFAULT_PAGINATION_CLASS': 'rest_framework.pagination.PageNumberPagination',
+    'DEFAULT_PAGINATION_CLASS': 'rest_framework.pagination.PageNumberPagination'
+
+
     # 'PAGE_SIZE': 100
 }
+

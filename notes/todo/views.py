@@ -16,7 +16,7 @@ class ProjectModelViewSet(ModelViewSet):
     queryset = Project.objects.all()
     serializer_class = ProjectModelSerializer
     filterset_class = ProjectFilter
-    # pagination_class = ProjectLimitOffsetPagination
+    pagination_class = ProjectLimitOffsetPagination
 
 
 class TodoLimitOffsetPagination(LimitOffsetPagination):
@@ -26,7 +26,7 @@ class TodoLimitOffsetPagination(LimitOffsetPagination):
 class TodoModelViewSet(ModelViewSet):
     queryset = Todo.objects.all()
     serializer_class = TodoModelSerializer
-    # pagination_class = TodoLimitOffsetPagination
+    pagination_class = TodoLimitOffsetPagination
     filter_backends = [DjangoFilterBackend]
     filterset_fields = ['projectname']
 
