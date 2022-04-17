@@ -13,7 +13,7 @@ return (
        <FooterLink href="#">Home </FooterLink>
        <FooterLink href="http://localhost:3000/#/todo">Notes</FooterLink>
        <FooterLink href="http://localhost:3000/#/projects">Projects</FooterLink>
-       <FooterLink href="#">My Profile </FooterLink>
+       <FooterLink href="http://localhost:3000/#/login/">Login</FooterLink>
        <FooterLink href="#">Settings</FooterLink>
        </div>
         )
