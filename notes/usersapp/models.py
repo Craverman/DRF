@@ -15,3 +15,4 @@ class User(AbstractUser):
 
     def __str__(self):
         return "{}".format(self.email)
+
