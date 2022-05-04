@@ -138,8 +138,11 @@ REST_FRAMEWORK = {
 
     # 'DEFAULT_PERMISSION_CLASSES': [
     #     'rest_framework.permissions.DjangoModelPermissions'],
+
     'DEFAULT_VERSIONING_CLASS':
     'rest_framework.versioning.QueryParameterVersioning',
+
+
 
     'DEFAULT_AUTHENTICATION_CLASSES': [
         'rest_framework.authentication.BasicAuthentication',
