@@ -47,6 +47,8 @@ INSTALLED_APPS = [
     'django_filters',
     'rest_framework.authtoken',
     'drf_yasg',
+    "graphene_django",
+
 
 ]
 
@@ -138,6 +140,8 @@ REST_FRAMEWORK = {
 
     # 'DEFAULT_PERMISSION_CLASSES': [
     #     'rest_framework.permissions.DjangoModelPermissions'],
+    'DEFAULT_PERMISSION_CLASSES': [
+        'rest_framework.permissions.DjangoModelPermissionsOrAnonReadOnly'],
 
     'DEFAULT_VERSIONING_CLASS':
     'rest_framework.versioning.QueryParameterVersioning',
@@ -155,5 +159,9 @@ REST_FRAMEWORK = {
 
 
     # 'PAGE_SIZE': 100
+}
+
+GRAPHENE = {
+"SCHEMA": "notes.schema.schema"
 }
 

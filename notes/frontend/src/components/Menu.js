@@ -6,6 +6,7 @@ import {
 } from "./FooterStyles";
 
 
+
 const Menu = () => {
 
 return (
@@ -13,7 +14,6 @@ return (
        <FooterLink href="#">Home </FooterLink>
        <FooterLink href="http://localhost:3000/#/todo">Notes</FooterLink>
        <FooterLink href="http://localhost:3000/#/projects">Projects</FooterLink>
-       <FooterLink href="http://localhost:3000/#/login/">Login</FooterLink>
        <FooterLink href="#">Settings</FooterLink>
        </div>
         )
@@ -21,4 +21,3 @@ return (
 };
 
 export default Menu;
-
